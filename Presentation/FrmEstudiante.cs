@@ -1,4 +1,5 @@
-﻿using Domain.Interfaces;
+﻿using Domain.Entities;
+using Domain.Interfaces;
 using Infraestructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,23 @@ namespace Presentation
 
         private void BtnMostrarEstudiante_Click(object sender, EventArgs e)
         {
-            //dgvEstudiantes.DataSource = 
+            dgvEstudiantes.DataSource = AccesData.estudiante.GetAll();
+
+        }
+
+        private void btnCalcularPromedio_Click(object sender, EventArgs e)
+        {
+            List<decimal> promedios = new List<decimal>();
+
+            foreach (Estudiante est in AccesData.estudiante.GetAll())
+            {
+                promedios.Add(notasModel.CalculatePromedio(notasModel.ClasificateNota(est)));
+            }
+
+            List<Estudiante> mejoresProm = notasModel.MejoresPromedio(AccesData.estudiante.GetAll(), promedios.ToArray());
+
+            dgvEstudiantes.DataSource = mejoresProm;
+
         }
     }
 }

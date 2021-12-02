@@ -72,8 +72,9 @@
             this.btnCalcularPromedio.Name = "btnCalcularPromedio";
             this.btnCalcularPromedio.Size = new System.Drawing.Size(83, 56);
             this.btnCalcularPromedio.TabIndex = 3;
-            this.btnCalcularPromedio.Text = "Calcular promedio de nota";
+            this.btnCalcularPromedio.Text = "Mejores promedios";
             this.btnCalcularPromedio.UseVisualStyleBackColor = true;
+            this.btnCalcularPromedio.Click += new System.EventHandler(this.btnCalcularPromedio_Click);
             // 
             // flowLayoutPanel1
             // 

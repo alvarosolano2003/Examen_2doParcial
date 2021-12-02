@@ -15,6 +15,6 @@ namespace Domain.Entities
         public int IParcial { get; set; }
         public int IIParcial { get; set; }
         public int TareaCurso { get; set; }
-        public int NotaFinal { get; set; }
+        public int NotaFinal => Sistematico + IParcial + IIParcial + TareaCurso;
     }
 }
