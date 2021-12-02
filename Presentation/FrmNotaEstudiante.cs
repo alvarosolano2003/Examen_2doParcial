@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Domain.Entities;
+using Domain.Interfaces;
+using Infraestructure.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +15,13 @@ namespace Presentation
 {
     public partial class FrmNotaEstudiante : Form
     {
+        public EstudianteRepository estudianteModel;
+        public NotaRepository notasModel;
+        public int Cont {get; set;}
         public FrmNotaEstudiante()
         {
+            estudianteModel = AccesData.estudiante == null ? new EstudianteRepository() : AccesData.estudiante;
+            notasModel = AccesData.notas == null ? new NotaRepository() : AccesData.notas;
             InitializeComponent();
         }
 
@@ -153,5 +161,22 @@ namespace Presentation
                 nudTareaCursoProgramacionI.Visible = false;
             }
         }
+
+        private void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            Estudiante est = new Estudiante()
+            {
+                Id = ++Cont,
+                Nombres = txtNombres.Text,
+                Apellidos = txtApellidos.Text,
+                Carnet = txtCarnet.Text,
+                Departamento = txtDepartamento.Text,
+                Municipio = txtMunicipio.Text
+            };
+
+            estudianteModel.Create(est);
+        }
+
+
     }
 }

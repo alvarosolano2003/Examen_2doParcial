@@ -77,6 +77,7 @@
             this.nudSistematicoCC = new System.Windows.Forms.NumericUpDown();
             this.cbContabilidadCostos = new System.Windows.Forms.CheckBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.gbDatosEstudiante.SuspendLayout();
             this.gbNotasEstudiante.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudIParcialProgramacionI)).BeginInit();
@@ -664,11 +665,22 @@
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Location = new System.Drawing.Point(45, 276);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegresar.TabIndex = 51;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.BtnRegresar_Click);
+            // 
             // FrmNotaEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 337);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.gbNotasEstudiante);
             this.Controls.Add(this.gbDatosEstudiante);
@@ -758,5 +770,6 @@
         private System.Windows.Forms.NumericUpDown nudIIParcialCC;
         private System.Windows.Forms.NumericUpDown nudTareaCursoCC;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }
