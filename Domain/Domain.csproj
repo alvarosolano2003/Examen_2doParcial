@@ -69,7 +69,9 @@
     <Compile Include="Entities\Estudiante.cs" />
     <Compile Include="Entities\Nota.cs" />
     <Compile Include="Enums\Asignatura.cs" />
+    <Compile Include="Interfaces\IEstudiante.cs" />
     <Compile Include="Interfaces\IModel.cs" />
+    <Compile Include="Interfaces\INotas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
